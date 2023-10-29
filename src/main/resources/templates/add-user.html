@@ -6,13 +6,14 @@
 </head>
 <body>
 <h1>Formularz rejestracji</h1>
-<form action="#" th:action="@{/adduser}" th:object="${user}" method="post" enctype="multipart/form-data">
-    <p>Id: <input type="text" th:field="*{id}" /></p>
+<!--<form action="#" th:action="@{/adduser}" th:object="${user}" method="post" enctype="multipart/form-data">-->
+<form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
+<!--    <p>Id: <input type="text" th:field="*{id}" /></p>-->
     <p>Name: <input type="text" th:field="*{name}" /></p>
     <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" />
     <p>Email: <input type="text" th:field="*{email}" /></p>
     <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" />
-    <input type="file" name="file" />
+<!--    <input type="file" name="file" />-->
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset"
     /></p>
 </form>

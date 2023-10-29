@@ -6,9 +6,30 @@
 </head>
 <body>
 <h1>Użytkownik</h1>
-<p th:text="'id: ' + ${user.id}" />
-<p th:text="'name: ' + ${user.name}" />
-<p th:text="'email: ' + ${user.email}" />
+<!--<p th:text="'id: ' + ${user.id}" />-->
+<!--<p th:text="'name: ' + ${user.name}" />-->
+<!--<p th:text="'email: ' + ${user.email}" />-->
+
+<form th:action="@{'/updateuser/' + ${user.id}}" method="post" th:object="${user}">
+    <p th:text="'Id: ' + ${user.id}" />
+
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" />
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" th:field="*{email}" />
+    </div>
+    <button type="submit">Update User</button>
+
+</form>
+
+<form th:action="@{'/deleteuser/' + ${user.id}}" method="post">
+    <button type="submit">Delete User</button>
+</form>
+
 <a href="/adduser">Kolejny użytkownik</a>
 </body>
 </html>

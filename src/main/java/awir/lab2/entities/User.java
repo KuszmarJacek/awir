@@ -1,9 +1,14 @@
-package awir.lab2;
+package awir.lab2.entities;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
+@Entity
+@Table(name="users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @NotNull(message = "name can not be null")
