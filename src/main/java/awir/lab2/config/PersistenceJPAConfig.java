@@ -6,6 +6,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = {"awir.lab2.repositories"})
+@EnableJpaRepositories(
+        basePackages = {
+                "awir.lab2.repositories"
+        })
 public class PersistenceJPAConfig {
 }
