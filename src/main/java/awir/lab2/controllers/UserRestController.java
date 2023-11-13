@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-public class UserRestController {
+public class UserRestController implements UserApi {
     @Autowired
     UserRepository repository;
     Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -49,7 +49,7 @@ public class UserRestController {
         }
     }
 
-    @GetMapping("/get_user/{name}")
+//    @GetMapping("/get_user/{name}")
     public ResponseEntity getUser(@PathVariable String name) {
         try {
             return ResponseEntity

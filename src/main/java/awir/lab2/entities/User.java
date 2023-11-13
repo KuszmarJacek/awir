@@ -1,6 +1,7 @@
 package awir.lab2.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
@@ -12,14 +13,15 @@ public class User {
     private long id;
 
     @NotNull(message = "name can not be null")
+    @NotBlank
     private String name;
 
     @NotNull(message = "email can not be null")
+    @NotBlank
     @Pattern(regexp =
                 "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" +
                 "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$",
-            message="invalid email address")
-
+                message="invalid email address")
     private String email;
 
     public User() {
