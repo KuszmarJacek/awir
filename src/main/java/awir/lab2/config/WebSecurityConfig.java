@@ -37,7 +37,8 @@ public class WebSecurityConfig {
                     .permitAll()
                 )
                 .httpBasic(Customizer.withDefaults())
-                .logout((logout) -> logout.permitAll());
+                .logout((logout) -> logout.permitAll())
+                .csrf().disable();
 
         return http.build();
     }
