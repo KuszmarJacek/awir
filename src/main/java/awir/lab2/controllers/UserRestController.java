@@ -49,7 +49,7 @@ public class UserRestController implements UserApi {
         }
     }
 
-//    @GetMapping("/get_user/{name}")
+    @GetMapping("/get_user/{name}")
     public ResponseEntity getUser(@PathVariable String name) {
         try {
             return ResponseEntity

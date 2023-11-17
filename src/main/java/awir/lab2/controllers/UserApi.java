@@ -23,7 +23,6 @@ public interface UserApi {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = User.class))
             })
     })
-    @RequestMapping
     public ResponseEntity addUser(@RequestBody User user);
 
     @Operation(summary = "Delete user", description = "This endpoint is responsible for removing a user from DB", tags = { "UserRestController" })
