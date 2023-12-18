@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserRestController implements UserApi {
     @Autowired
     UserRepository repository;
+
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @PostMapping("/add_user")
